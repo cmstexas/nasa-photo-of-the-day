@@ -4,12 +4,12 @@ import DayCard from "../Components/DayCard";
 
 
 export default function DayGrid({ limit }) {
-    const [hdImage, setImage] = useState([]);
-    const [date, setDate] = useState([]);
+    const [hdImage, setImage] = useState("");
+    const [date, setDate] = useState("2019-07-15");
   
     useEffect(() => {
       axios
-        .get('https://api.nasa.gov/planetary/apod?api_key=Dqi1aIt6ZhF8QjaBRhzVAdfv6ybls4xP4zXhM5wU&date=2019-07-15')
+        .get(`https://api.nasa.gov/planetary/apod?api_key=Dqi1aIt6ZhF8QjaBRhzVAdfv6ybls4xP4zXhM5wU&date=${date}`)
         .then(response => {
           const pod = response.data.hdurl;
           //pod = pic of day
@@ -20,14 +20,15 @@ export default function DayGrid({ limit }) {
 
           const podDate = response.data.date;
           console.log(podDate);
-          setDate(podDate)
+          // setDate(podDate)
+        
         });
-    }, []);
+    }, [date]);
   
     // console.log("breed", breed);
     return (
       <div className="day-grid">
-        <button onClick={() => setDate("today")}>Today</button>
+        <button onClick={() => setDate("2019-07-17")}>July 17, 2019</button>
         <button onClick={() => setDate("2019-07-16")}>July 16, 2019</button>
         <button onClick={() => setDate("2019-07-15")}>July 15, 2019</button>
         <button onClick={() => setDate("2019-07-14")}>July 14, 2019</button>
