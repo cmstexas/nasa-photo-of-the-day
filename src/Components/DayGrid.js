@@ -1,6 +1,22 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import DayCard from "../Components/DayCard";
+import styled from "styled-components";
+
+
+const Buttondays = styled.button`
+  background-color:#4c87ed;
+	border-radius:21px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:17px;
+	padding:19px 44px;
+	text-decoration:none;
+  margin: 1.5rem;
+  margin-bottom: 3rem;
+`;
 
 
 export default function DayGrid({ limit }) {
@@ -31,10 +47,10 @@ export default function DayGrid({ limit }) {
     // console.log("breed", breed);
     return (
       <div className="day-grid">
-        <button onClick={() => setDate("2019-07-17")}>July 17, 2019</button>
-        <button onClick={() => setDate("2019-07-16")}>July 16, 2019</button>
-        <button onClick={() => setDate("2019-07-15")}>July 15, 2019</button>
-        <button onClick={() => setDate("2019-07-14")}>July 14, 2019</button>
+        <Buttondays onClick={() => setDate("2019-07-17")}>July 17, 2019</Buttondays>
+        <Buttondays onClick={() => setDate("2019-07-16")}>July 16, 2019</Buttondays>
+        <Buttondays onClick={() => setDate("2019-07-15")}>July 15, 2019</Buttondays>
+        <Buttondays onClick={() => setDate("2019-07-14")}>July 14, 2019</Buttondays>
         <DayCard imageUrl={hdImage} key={hdImage} />
         {/* {hdImage.map(podUrl => {
           return <DayCard imageUrl={podUrl} />;
