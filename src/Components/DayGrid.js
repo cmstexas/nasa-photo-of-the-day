@@ -17,6 +17,9 @@ export default function DayGrid({ limit }) {
           console.log("pod api:", pod);
           // KEY PART, SAVE TO STATE:
           setImage(pod);
+          // setMediaType(response.data.media_type);
+
+
 
           const podDate = response.data.date;
           console.log(podDate);

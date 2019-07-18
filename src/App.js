@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import DayGrid from "./Components/DayGrid";
+import 'semantic-ui-css/semantic.min.css';
+import Media from "./Components/Media";
 
 // import Numbers from "./components/ButtonComponents/NumberButtons/Numbers";
 
